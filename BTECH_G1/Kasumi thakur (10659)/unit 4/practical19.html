@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Drawing</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; padding: 20px; }
+        canvas { background-color: #f9f9f9; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body>
+
+    <h2>Simple Canvas Drawing</h2>
+    <canvas id="myCanvas" width="500" height="300" style="border:2px solid #333;"></canvas>
+
+    <script>
+      
+        const canvas = document.getElementById("myCanvas");
+        const ctx = canvas.getContext("2d");
+
+       
+        ctx.fillStyle = "#3498db"; 
+        ctx.fillRect(50, 50, 150, 100); 
+        
+        
+        ctx.fillStyle = "black";
+        ctx.fillText("Rectangle", 50, 45);
+
+       
+        ctx.beginPath();
+        ctx.arc(350, 100, 60, 0, Math.PI * 2); 
+        ctx.fillStyle = "#e74c3c"; 
+        ctx.fill();
+        ctx.stroke();
+       
+        ctx.beginPath();
+        ctx.moveTo(250, 200); 
+        ctx.lineTo(350, 280); 
+        ctx.lineTo(150, 280); 
+        ctx.closePath();      
+        ctx.fillStyle = "#2ecc71"; 
+        ctx.fill();
+        ctx.stroke();
+    </script>
+
+</body>
+</html>
